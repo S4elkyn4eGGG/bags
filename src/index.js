@@ -7,7 +7,8 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
 import reducer from 'reducers';
-import Main from 'containers/Main';
+import TopMenu from 'containers/TopMenu';
+import Catalog from 'containers/Catalog';
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 
@@ -16,7 +17,8 @@ ReactDOM.render(
        <Switch>
            <Provider store={store}>
                <div>
-                   <Route path={'/'} component={Main} exact/>
+                   <Route path={'/'} component={TopMenu} exact/>
+                   <Route path={'/catalog'} component={Catalog} exact/>
                </div>
            </Provider>
        </Switch>
